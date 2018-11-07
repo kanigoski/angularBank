@@ -1,3 +1,41 @@
+<form [formGroup]="formCadastro" (ngSubmit)="cadastro()">
+  <label>
+    Nome:
+    <input type="text" formControlName="nome" required>
+  </label>
+
+  <label>
+    CPF:
+    <input type="text" formControlName="cpf">
+  </label>
+
+  <label>
+    E-Mail:
+    <input type="text" formControlName="email">
+  </label>
+
+  <label>
+    Telefone:
+    <input type="text" formControlName="telefone">
+  </label>
+
+  <label>
+    Endereço:
+    <input type="text" formControlName="endereco">
+  </label>
+
+  <div formArrayName="aliases">
+    <button type="submit" [disabled]="!formCadastro.valid">Cadastrar</button>
+  </div>
+</form>
+
+<hr>
+
 <p>
-  cadastro-cliente works!
+  Form Value: {{ profileForm.value | json }}
+</p>
+
+
+<p>
+  Form Status: {{ profileForm.status }}
 </p>
